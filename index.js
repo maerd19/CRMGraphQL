@@ -5,11 +5,15 @@ const typeDefs = gql`
 
     type Curso {
         titulo: String
+    }
+
+    type Tecnologia {
         tecnologia: String
     }
 
     type Query {
         obtenerCursos : [Curso]
+        obtenerTecnologia : [Tecnologia]
     }
 
 `
@@ -36,7 +40,8 @@ const cursos = [
 // Resolvers
 const resolvers = {
     Query: {
-        obtenerCursos: () => cursos
+        obtenerCursos: () => cursos,
+        obtenerTecnologia: () => cursos
     }
 }
 
